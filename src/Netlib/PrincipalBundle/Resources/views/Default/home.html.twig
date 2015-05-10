@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>NetLib</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% stylesheets 'css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+        {% javascripts 'js/jquery.min.js' 'js/libraries.js' 'js/jquery.form.min.js' 'js/ajaxPadrao.js' 'js/configAjax.js' 'js/jquery-ui.min.js' 'js/analytics.js' 'js/classes/botoes.js' 'js/classes/perfil.js' 'js/classes/busca.js' 'js/classes/favoritos.js' 'js/classes/mensagem.js'%}
+        <script type="text/javascript" src="{{ asset_url }}" /></script>
+        {% endjavascripts %}
+    <style>
+        #removerFoto1{display:none;}
+        #removerFoto2{display:none;}
+        #removerFoto3{display:none;}
+        #mensagens{display:none;}
+        #mensagensHistorico{color:blue; cursor: pointer;}
+        #galeriaFotos{clear:both;}
+    </style>
+    <script type='text/javascript'>
+        //instancias de classes
+        var botoes = new Botoes;
+        var perfis = new Perfil;
+        var busca = new Busca;
+        var favoritos = new Favoritos;
+        var mensagem = new Mensagem;
+
+        //propriedades globais
+        var notificacao = false; //propriedade que verifica recebimento de novas mensagens. True existe novas mensagens e false não existe
+
+        $(document).ready(function() {
+
+            //Buscar 30 usuários aleatorios do site
+            setTimeout(function() {
+                busca.BuscarUsuariosHome();
+            }, 500);
+            
+            /**
+             * Botao perfil
+             */
+            $('#botaoPerfil').click(function() {
+                botoes.botaoPerfil();
+            });
+
+            /**
+             * Botao sair
+             */
+            $('#botaoSair').click(function() {
+                botoes.botaoSair();
+            });
+
+            /**
+             * Botao favoritos
+             */
+            $('#botaoFavoritos').click(function() {
+                botoes.botaoFavoritos();
+            });
+
+            /**
+             * Botao mensagens
+             */
+            $('#botaoMensagens').click(function() {
+                botoes.botaoMensagem();
+            });
+
+            // --------------- EDIÇÃO PERFIL ------------- //
+
+            /**
+             * Upload de fotos
+             */
+            $('#perfil_perfil').change(function() {
+                perfis.enviarFoto($(this).attr('id'));
+            });
+
+            $('#perfil_foto1').change(function() {
+                perfis.enviarFoto($(this).attr('id'));
+            });
+
+            $('#perfil_foto2').change(function() {
+                perfis.enviarFoto($(this).attr('id'));
+            });
+
+            $('#perfil_foto3').change(function() {
+                perfis.enviarFoto($(this).attr('id'));
+            });
+
+            /**
+             * Remover fotos
+             */
+            $('#removerFoto1').click(function() {
+                perfis.removerFoto($(this).attr('id'));
+            });
+
+            $('#removerFoto2').click(function() {
+                perfis.removerFoto($(this).attr('id'));
+            });
+
+            $('#removerFoto3').click(function() {
+                perfis.removerFoto($(this).attr('id'));
+            });
+
+            /**
+             * Enviar dados do formulário de edição de perfil
+             */
+            $('#perfil_Enviar').click(function() {
+                perfis.alterarPerfil();
+            });
+
+            //----------------- BUSCA -------------------//
+
+            /**
+             * Enviar dados do formulário de busca
+             */
+            $('#busca_Ir').click(function() {
+                busca.pesquisarInteresses();
+            });
+
+            /**
+             * carregar mais resultados de busca
+             */
+            $(window).scroll(function() {
+                if ($('#search-results').length != 0)
+                    busca.carregarResultados();
+            });
+
+            //----------------- FAVORITOS -------------------//
+
+            $(window).scroll(function() {
+                if ($('#search-favorites li').length != 0)
+                    favoritos.carregarFavoritos();
+            });
+
+            //----------------- MENSAGEM -------------------//
+
+            /**
+             * Enviar mensagem para o usuario do chat
+             */
+            $('#mensagem_Enviar').click(function() {
+                mensagem.enviarMensagem();
+            });
+
+
+            /**
+             * Função verifica se existe novas mensagens e sempre atualiza o chat com as novas mensagens recebidas
+             * Aplicação roda a cada 5 segundos, automaticamente
+             */
+            window.setInterval(function() {
+                if (!notificacao && $('.chat-contacts section').length == 0)
+                    mensagem.receberNotificacao(false);
+                else if ($('.chat-contacts section').length != 0)
+                    mensagem.receberNotificacao(true);
+            }, 5000);
+
+            /**
+             * Função verifica quem está online e offline
+             * Aplicação roda a cada 1 minuto, automaticamente
+             */
+            window.setInterval(function() {
+                if ($('.chat-contacts section').length != 0)
+                    mensagem.verificarStatus();
+            }, 30000);
+            
+           /**
+            * Função para verificar/alterar status do usuário para online
+            */
+            window.setInterval(function() {
+                obj = {'status': true};
+                ajaxPadrao('POST', obj, '', 'json', false, 'Erro ao verificar status do usuário', true);
+            }, 60000);
+
+            /**
+             * Função atualiza lista de contatos
+             * Aplicação roda a cada 1 minuto, automaticamente
+             */
+            window.setInterval(function() {
+                if ($('.chat-contacts section').length != 0)
+                    mensagem.receberContatos();
+            }, 30000);
+        });
+    </script>
+</head>
+<body class="orangedark">
+    <nav>	
+        <header> <!-- Logo -->
+            <a href="#">{% image 'images/logo1.png' %} <a href='{{path('netlib_home')}}'><img src="{{ asset_url }}" alt="NetLib"> </a>{% endimage %}</a>
+        </header>
+        <section> <!-- Pesquisa -->
+            <form id='formulario_busca' action='' method='POST'>
+                <span>
+                        {{ form_widget(formBusca.busca) }}
+                </span>
+                <button id="busca_Ir" name="busca[Busca]" aria-label="Pesquisar" data-icon="&#61591;" type="submit" value="Ir"></button>
+            </form>
+        </section>
+        <section id="navegacao-menu"> <!-- Menu -->
+            <button type='button' aria-label="Menu" data-icon="&#61766;" value="Menu"></button>
+            <ul class="menu-list">
+                <li><a id='botaoMensagens' href="javascript:void(0);">Mensagens</a></li>
+                <li><a id='botaoFavoritos' href="javascript:void(0);">Favoritos</a></li>
+                <li><a id='botaoPerfil' href="javascript:void(0);">Perfil</a></li>
+                <li><a id='botaoFaq' href="{{path('netlib_faq')}}" target="_blank">FAQ</a></li>
+                <li><a id='botaoSair' href="javascript:void(0);">Sair</a></li>
+            </ul>
+        </section>
+    </nav>
+    <section class='main'>
+
+        <aside id= "ajax">
+        </aside>
+
+        <aside id= "alerts" class="alerts-off">
+            <p id="mensagemApelido"></p>
+            <p id="mensagemEmail"></p>
+            <p id="aviso"></p>
+            <p id="erros"></p>		
+        </aside>
+
+        <!-- Mensagens -->
+        <article id="empty-article" class="chat-messages-viewport">
+            <aside class="chat-contacts-viewport"> <!-- onde aparcem as mensagens -->
+                <section class="chat-contacts">
+                </section>
+            </aside>
+            <header id="usuarioConversa">
+            </header>
+            <section class="chat-messages"> <!-- onde aparcem as mensagens -->
+                <section class="chat-messages-area"></section>
+            </section>
+            <footer id="mensagens"> <!-- Onde você escreve sua mensagem -->
+                <section>
+                    <form id='formulario_mensagem' action='' method='post'>
+                        <span>{{ form_widget(formMensagem.mensagem) }}</span>
+                        <button id="mensagem_Enviar" aria-label="Enviar" data-icon="&#61776;" type="submit" value="Enviar"></button>
+                    </form>
+                </section>
+            </footer>
+        </article>
+
+        <!-- Edição de perfil-->
+        <article id="empty-article" class="profile-and-singup-container userprofile">
+            <form id="formulario_perfil" action="" method="POST">
+                <header> <!-- Informação principal -->
+                    <h1 id="apelidoPerfil"></h1> <!-- Apelido -->
+                </header>
+                <section class="photo-section"> <!-- Informações de Perfil-->
+                    <section class="signup-form">
+                        <section>
+                                {{ form_widget(formPerfil.senha) }}
+                        </section>
+                    </section>
+                    <figure class="figure"> <!-- Foto de Perfil -->
+                            {{ form_widget(formPerfil.perfil) }}
+                        <section class="image-text-overlay">Quer mudar seu rosto?</br>Clique aqui para fazer upload de uma imagem de no mínimo 200x200pixels</section>
+                        <img id ="perfil" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                    </figure>
+                    <p> <!-- Descrição -->
+                            {{ form_widget(formPerfil.interesses) }}
+                    </p>
+                    <aside class="userprofile-gallery"> <!-- Galeria -->
+                        <section class="photo-section">
+                                {{ form_widget(formPerfil.foto1) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigatório)</section>								
+                            <img id="foto1" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button id="removerFoto1" type="button" class="right" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                        <section class="photo-section">
+                                {{ form_widget(formPerfil.foto2) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigatório)</section>								
+                            <img id="foto2" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button id="removerFoto2" type="button" class="right" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                        <section class="photo-section">
+                                {{ form_widget(formPerfil.foto3) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigatório)</section>								
+                            <img id="foto3" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button id="removerFoto3" type="button" class="right" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                    </aside>
+                </section>
+                <section class="accinfo"> <!-- Informações de Conta-->
+                    <section>
+                        <label class="appear" for="perfil_filtro" class="required">Nas suas pesquisas você quer:</label>
+                            {{ form_row(formPerfil.filtro) }}
+                    </section>
+                </section>
+                <footer class="saveprofile-button">
+                    <button type="submit" id="perfil_Enviar" name="perfil[Enviar]">Salvar</button>
+                </footer>
+                    {{(form_rest(formPerfil))}}
+            </form>
+        </article>
+
+        <!-- Perfil de outro usuário -->
+        <article id="empty-article" class="profile-and-singup-container profile">
+            <header> <!-- Informação principal -->
+                <h1 id="apelidoBusca"></h1> <!-- Apelido -->
+            </header>
+            <section> <!-- Informações de Perfil-->
+                <section id="fotoPerfil" class="photo-section">
+                </section>
+                <p id='descricaoPerfil'class=""> <!-- Descrição -->
+                </p>
+                <aside id="galeriaFotos" class="profile-gallery float-fig"> <!-- Galeria -->
+                </aside>
+            </section>
+            <footer id='linksAcao'> <!-- Opções de ação -->
+            </footer>
+        </article>
+
+        <!-- Favoritos -->
+        <ul id="search-favorites" class="search-results-viewport"></ul>
+
+        <!-- Pesquisa -->
+        <ul id="search-results" class="search-results-viewport"></ul>
+
+        <!-- Notificação Mensagem -->
+        <aside id="notificacao" class="new-message-poupup-container down" onclick="botoes.botaoMensagem()">
+            <section class="new-message-poupup">
+                <p>Nova mensagem</p>
+            </section>
+        </aside>
+
+    </section>
+    <footer class="pagefooter">
+        ©NetLib 2013. <a href="{{path('netlib_contato')}}" target="_blank">Gostaria de entrar em contato?</a>
+    </footer>
+</body>
+</html>
+

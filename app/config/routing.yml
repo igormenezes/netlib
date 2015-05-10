@@ -1,0 +1,4 @@
+netlib_principal:
+    resource: "@NetlibPrincipalBundle/Resources/config/routing.yml"
+    prefix:   /
+    

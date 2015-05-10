@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>NetLib</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% stylesheets 'css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+        {% javascripts 'js/jquery.min.js' 'js/libraries.js' 'js/jquery.form.min.js' 'js/ajaxPadrao.js' 'js/configAjax.js' 'js/jquery-ui.min.js' 'js/analytics.js' 'js/classes/cadastro.js' %}
+        <script type="text/javascript" src="{{ asset_url }}" /></script>
+        {% endjavascripts %}
+    <style>
+        #removerFoto1{display:none;}
+        #removerFoto2{display:none;}
+        #removerFoto3{display:none;}
+    </style>
+    <script type='text/javascript'>
+        //instancia de classes
+        var cadastro = new Cadastro;
+
+        $(document).ready(function() {
+            /**
+             * Verificar se apelido e email existem
+             */
+            $('#cadastro_apelido').blur(function() {
+                cadastro.verificarDados($(this).attr('id'));
+            });
+
+            $('#cadastro_email').blur(function() {
+                cadastro.verificarDados($(this).attr('id'));
+            });
+
+            /**
+             * Upload de fotos
+             */
+            $('#cadastro_perfil').change(function() {
+                cadastro.enviarFoto($(this).attr('id'));
+            });
+
+            $('#cadastro_foto1').change(function() {
+                cadastro.enviarFoto($(this).attr('id'));
+            });
+
+            $('#cadastro_foto2').change(function() {
+                cadastro.enviarFoto($(this).attr('id'));
+            });
+
+            $('#cadastro_foto3').change(function() {
+                cadastro.enviarFoto($(this).attr('id'));
+            });
+
+            /**
+             * Evento para remover fotos na sessao de cadastro
+             */
+            $('#removerFoto1').click(function() {
+                cadastro.removerFoto($(this).attr('id'));
+            });
+
+            $('#removerFoto2').click(function() {
+                cadastro.removerFoto($(this).attr('id'));
+            });
+
+            $('#removerFoto3').click(function() {
+                cadastro.removerFoto($(this).attr('id'));
+            });
+
+            /**
+             * Evento para realizar submit por Ajax do formul�rio de cadastro
+             */
+            $('#cadastro_Enviar').click(function() {
+                cadastro.cadastrar();
+            });
+        });
+    </script>
+</head>
+<body class="orangedark">
+    <section class='main'>
+        <aside id= "alerts" class="alerts-off">
+            <p id="mensagemApelido"></p>
+            <p id="mensagemEmail"></p>
+            <p id="aviso"></p>
+            <p id="erros"></p>		
+        </aside>
+        <!-- Cadastro -->
+        <article id="fill-article" class="profile-and-singup-container signup">
+            <form id="formulario_cadastro" method='POST' action='' {{ form_enctype(form) }}>
+                <section class="signup-form"> <!-- InformaÃ§Ã£o principal -->
+                    <h1>Cadastro</h1>
+                    <section>
+                        {{ form_widget(form.apelido) }}
+                    </section>
+                    <section>
+                        {{ form_widget(form.nome) }}
+                    </section>
+                    <section>
+                        {{ form_widget(form.email) }}
+                    </section>
+                    <section>
+                        {{ form_widget(form.senha) }}
+                    </section>
+                    <section>
+                        <label class="appear" for="cadastro_sexo" class="required">Qual o seu sexo:</label>
+                        {{ form_widget(form.sexo) }}
+                    </section>
+                    <section>
+                        <label class="appear" for="cadastro_filtro" class="required">Nas suas pesquisas você quer que apareça:</label>
+                        {{ form_widget(form.filtro) }}
+                    </section>    
+                </section>
+                <section class="photo-section"> <!-- InformaÃ§Ãµes de Perfil-->
+                    <figure class="figure float-fig"> <!-- Foto de Perfil -->
+                        {{ form_widget(form.perfil) }}
+                        <section class="image-text-overlay">Quer mudar seu rosto?</br>Clique aqui para fazer upload de uma imagem de no mínimo 200x200pixels</section>
+                        <img id="perfil" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                    </figure>
+                    <p class="float-fig"> <!-- DescriÃ§Ã£o -->
+                        {{ form_widget(form.interesses) }}
+                    </p>
+                    <aside class="userprofile-gallery"> <!-- Galeria -->
+                        <section class="photo-section">
+                            {{ form_widget(form.foto1) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigátorio)</section>								
+                            <img id="foto1" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button type="button" id="removerFoto1" class="right offline-hover" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                        <section class="photo-section">
+                            {{ form_widget(form.foto2) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigátorio)</section>								
+                            <img id="foto2" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button type="button" id="removerFoto2" class="right offline-hover" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                        <section class="photo-section">
+                            {{ form_widget(form.foto3) }}
+                            <section class="image-text-overlay">Conte mais sobre você com uma foto</br>(não é obrigátorio)</section>								
+                            <img id="foto3" class="img-fade" src="images/gal/tmb.jpg" alt="ProfileThumb">
+                            <button type="button" id="removerFoto3" class="right offline-hover" href="#" aria-label="Remover" data-icon="&#61774;" value="Remover">Remover </button>
+                        </section>
+                    </aside>
+                </section>
+                <footer class="saveprofile-button">
+                    {{ form_widget(form.Enviar)}} 
+                </footer>
+                {{ form_rest(form) }}
+            </form>
+        </article>
+        <aside id= "ajax">
+        </aside>
+    </section>
+</body>
+</html>    

@@ -1,0 +1,48 @@
+netlib_index:
+    pattern:  /
+    defaults: { _controller: NetlibPrincipalBundle:Index:index }
+    
+netlib_cadastro:
+    pattern:  /cadastro
+    defaults: { _controller: NetlibPrincipalBundle:Cadastro:cadastro }
+    
+netlib_home:
+  pattern: /home
+  defaults: { _controller: NetlibPrincipalBundle:Home:home }
+  
+netlib_contato:
+    pattern: /contato
+    defaults: { _controller: NetlibPrincipalBundle:Contato:contato }
+
+netlib_denunciar:
+    pattern: /denunciar/{apelido}
+    defaults: { _controller: NetlibPrincipalBundle:Denunciar:denunciar }  
+
+netlib_esquecisenha:
+    pattern: /esquecisenha
+    defaults: { _controller: NetlibPrincipalBundle:Esquecisenha:esquecisenha }
+    
+netlib_novasenha:
+    pattern: /novasenha
+    defaults: { _controller: NetlibPrincipalBundle:Novasenha:novasenha }
+    
+netlib_ativacao:
+    pattern: /ativacao/{token}
+    defaults: { _controller: NetlibPrincipalBundle:Ativacao:ativacao }
+
+netlib_faq:
+    pattern: /faq
+    defaults: { _controller: NetlibPrincipalBundle:Faq:faq}
+    
+netlib_termos:
+    pattern: /termos
+    defaults: { _controller: NetlibPrincipalBundle:Termos:termos}
+    
+netlib_sobre:
+    pattern: /sobre
+    defaults: { _controller: NetlibPrincipalBundle:Sobre:sobre}  
+
+netlib_erros:
+    pattern: /{erro}/{erro1}/{erro2}/{erro3}/{erro4}/{erro5}
+    defaults: { _controller: NetlibPrincipalBundle:Erros:erros, erro1: true, erro2: true, erro3: true, erro4: true, erro5: true}
+       

@@ -1,0 +1,19 @@
+# This file is auto-generated during the composer install   
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: ~
+    database_name: blogi396_netlib_usuarios
+    database_name2: blogi396_netlib_busca
+    database_user: blogi396_root
+    database_password: administrador123
+
+    pdo.class: PDO
+    database.dbPDO.dsn: mysql:host=localhost;dbname=blogi396_netlib_usuarios
+    database_portPDO: ~
+    database.dbPDO.username: blogi396_root
+    database.dbPDO.password: administrador123
+    
+    mailer_transport: mail
+    locale: pt
+    secret: ThisTokenIsNotSoSecretChangeIt

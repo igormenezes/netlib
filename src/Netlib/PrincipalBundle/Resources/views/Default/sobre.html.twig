@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>NetLib</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% stylesheets 'css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+        {% javascripts 'js/analytics.js' %}
+        <script type="text/javascript" src="{{ asset_url }}" /></script>
+        {% endjavascripts %}
+</head>
+<body class="orangenormal">
+    <section class='login-big-box orangedark'>
+        <h1>O que é o Netlib</h1>
+        <section class="topic">
+            <p class="answer">NetLib é uma rede social que acredita na liberdade de expressão, dando ao usuário apenas um campo para se descrever, uma foto para mostrar quem é e no máximo outras três opcionais para complementar. Assim, quem se inscreve não precisa se definir com rótulos obrigatórios, formulários longos ou opções pré-definidas.</p>
+            <p class="answer">O resultado é um momento de cadastro que pede auto-reflexão e um site com perfis que não contém apenas uma lista de frases prontas e sim histórias e interesses que fazem sentido entre si, num texto pensado pelo usuário.</p>
+            <p class="answer">Esse mesmo texto é o que alimenta os resultados de pesquisas no site. Se você quiser saber sobre todas as pessoas que se interessam e desinteressam por política é só pesquisar pelo termo que os perfis com ele serão o resultado. E se ninguém for encontrado, você é avisado e recebe sugestões.</p>
+        </section>
+        <a href="{{path('netlib_cadastro')}}">Cadastre-se</a>
+        <a href="{{path('netlib_contato')}}">Contato</a>
+    </section>
+</body>
+</html>

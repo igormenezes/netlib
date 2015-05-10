@@ -1,0 +1,1819 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+/* line 9, _normalize.sass */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 24, _normalize.sass */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 34, _normalize.sass */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 41, _normalize.sass */
+[hidden] {
+  display: none;
+}
+
+/* line 53, _normalize.sass */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 61, _normalize.sass */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/* line 74, _normalize.sass */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 80, _normalize.sass */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 91, _normalize.sass */
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+/* line 95, _normalize.sass */
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+/* line 99, _normalize.sass */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+/* line 103, _normalize.sass */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* line 107, _normalize.sass */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+/* line 111, _normalize.sass */
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+/* line 117, _normalize.sass */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 122, _normalize.sass */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 126, _normalize.sass */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 131, _normalize.sass */
+dfn {
+  font-style: italic;
+}
+
+/* line 136, _normalize.sass */
+mark {
+  background: yellow;
+  color: black;
+}
+
+/* line 142, _normalize.sass */
+p,
+pre {
+  margin: 1em 0;
+}
+
+/* line 149, _normalize.sass */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+}
+
+/* line 159, _normalize.sass */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 166, _normalize.sass */
+q {
+  quotes: none;
+}
+
+/* line 171, _normalize.sass */
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* line 176, _normalize.sass */
+small {
+  font-size: 75%;
+}
+
+/* line 182, _normalize.sass */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 189, _normalize.sass */
+sup {
+  top: -0.5em;
+}
+
+/* line 192, _normalize.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 201, _normalize.sass */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+/* line 207, _normalize.sass */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 212, _normalize.sass */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/* line 219, _normalize.sass */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 232, _normalize.sass */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 238, _normalize.sass */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 247, _normalize.sass */
+figure {
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+/* line 260, _normalize.sass */
+form {
+  margin: 0;
+}
+
+/* line 265, _normalize.sass */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 274, _normalize.sass */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+/* line 284, _normalize.sass */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 296, _normalize.sass */
+button,
+input {
+  line-height: normal;
+}
+
+/* line 310, _normalize.sass */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+/* line 318, _normalize.sass */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/* line 327, _normalize.sass */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+/* line 338, _normalize.sass */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 346, _normalize.sass */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 352, _normalize.sass */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 360, _normalize.sass */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 370, _normalize.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 380, _normalize.sass */
+p {
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 386, _normalize.sass */
+b, strong, .strong {
+  font-weight: bold;
+}
+
+/* line 389, _normalize.sass */
+dfn, em, .em {
+  font-style: italic;
+}
+
+/* line 392, _normalize.sass */
+small, .small {
+  font-size: 75%;
+}
+
+/* line 395, _normalize.sass */
+ul, ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 399, _normalize.sass */
+dd {
+  margin: 0;
+}
+
+/* line 402, _normalize.sass */
+.sidebar ul,
+.sidebar ol,
+.commentlist {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "batch";
+  src: url("fonts/batch.woff") format("woff"), url("fonts/batch.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes make-it-rotate {
+  /* line 99, _base.sass */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 101, _base.sass */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes make-it-rotate {
+  /* line 105, _base.sass */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* line 107, _base.sass */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes flicking {
+  /* line 112, _base.sass */
+  0% {
+    background: #e75723;
+  }
+
+  /* line 114, _base.sass */
+  50% {
+    background: #ff7542;
+  }
+
+  /* line 116, _base.sass */
+  100% {
+    background: #e75723;
+  }
+}
+
+@keyframes flicking {
+  /* line 120, _base.sass */
+  0% {
+    background: #e75723;
+  }
+
+  /* line 122, _base.sass */
+  50% {
+    background: #ff7542;
+  }
+
+  /* line 124, _base.sass */
+  100% {
+    background: #e75723;
+  }
+}
+
+/* line 128, _base.sass */
+*::selection, *::-moz-selection {
+  background: #23e7bf;
+}
+
+/* line 130, _base.sass */
+.orangedark {
+  background: #b33600;
+}
+
+/* line 132, _base.sass */
+.orangenormal {
+  background: #e75723;
+}
+
+/* line 134, _base.sass */
+body {
+  margin: 0;
+  padding: 0 0 1rem 0;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* line 141, _base.sass */
+button {
+  height: 3rem;
+  margin: 0;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  background: #e75723;
+  -webkit-transition: color 0.15s ease-out;
+  transition: color 0.15s ease-out;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 153, _base.sass */
+button:hover {
+  color: white;
+  background: #ff7542;
+}
+
+/* line 156, _base.sass */
+.menu-list {
+  display: block;
+  width: 100%;
+  max-height: 20rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-indent: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  background: #b33600;
+  -webkit-transition: max-height 0.26s ease-in-out;
+  transition: max-height 0.26s ease-in-out;
+}
+/* line 169, _base.sass */
+.menu-list li {
+  width: 100%;
+}
+/* line 171, _base.sass */
+.menu-list a {
+  display: block;
+  width: 100%;
+  margin: 0.48rem 0;
+  padding: 0.72rem 0;
+  background: #e75723;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 178, _base.sass */
+.menu-list a:hover {
+  background: #ff7542;
+}
+
+/* line 180, _base.sass */
+.menu-image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-align: center;
+  background: #e75723;
+}
+/* line 189, _base.sass */
+.menu-image a {
+  display: block;
+  width: 30%;
+  padding: 1rem 0 0.72rem;
+  max-width: 3.6rem;
+  background: #e75723;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 196, _base.sass */
+.menu-image .left {
+  float: left;
+}
+/* line 198, _base.sass */
+.menu-image .left:hover {
+  background: #ff7542;
+}
+/* line 200, _base.sass */
+.menu-image .right {
+  float: right;
+}
+/* line 202, _base.sass */
+.menu-image .right:hover {
+  background: #ff4242;
+}
+
+/* line 204, _base.sass */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 207, _base.sass */
+[data-icon]:after {
+  font-family: "batch";
+  font-weight: normal;
+  content: attr(data-icon);
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 213, _base.sass */
+.input-text-area {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  color: black;
+  background: rgba(255, 255, 255, 0.973);
+  border: none;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 221, _base.sass */
+.input-text-area:hover, .input-text-area:focus {
+  background: white;
+}
+
+/* line 224, _base.sass */
+.input-area {
+  height: 3rem;
+  padding: 0;
+  text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.1rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.973);
+  border: none;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 234, _base.sass */
+.input-area:hover, .input-area:focus {
+  background: white;
+}
+
+/* line 237, _base.sass */
+label {
+  display: none;
+}
+
+/* line 239, _base.sass */
+.appear {
+  display: block;
+}
+
+/* line 241, _base.sass */
+.sent {
+  color: #33241e;
+}
+
+/* line 243, _base.sass */
+.recieved {
+  color: rgba(51, 36, 30, 0.52);
+}
+
+/* line 245, _base.sass */
+.online {
+  background: #009999;
+}
+
+/* line 247, _base.sass */
+.offline {
+  background: #ff4242;
+}
+
+/* line 250, _base.sass */
+.offline-hover:hover {
+  background: #ff4242;
+}
+
+/* line 254, _base.sass */
+nav {
+  width: 100%;
+  margin: -0.6rem 0 0;
+  padding: 0.72rem 0 0.72rem 0;
+  font-weight: 700;
+  background: #b33600;
+}
+/* line 260, _base.sass */
+nav header {
+  margin: 0.72rem 0;
+  height: 4rem;
+}
+/* line 263, _base.sass */
+nav header a img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 267, _base.sass */
+nav section button {
+  display: inline-block;
+  width: 13%;
+  height: 3rem;
+  margin: 0 0 0 2%;
+  font-size: 1.2rem;
+}
+/* line 274, _base.sass */
+nav section:hover .menu-list {
+  width: 96%;
+  max-height: 20rem;
+  font-size: 1.2rem;
+}
+/* line 278, _base.sass */
+nav section:hover .menu-list a {
+  margin: 0.48rem 2%;
+  padding: 0.72rem 0;
+}
+/* line 281, _base.sass */
+nav section .menu-list {
+  max-height: 0;
+  font-size: 0;
+}
+/* line 284, _base.sass */
+nav section .menu-list a {
+  margin: 0;
+  padding: 0;
+}
+/* line 287, _base.sass */
+nav form {
+  display: block;
+  float: right;
+  clear: right;
+  width: 83%;
+  height: 3rem;
+  margin: 0 2% 0 0;
+}
+/* line 294, _base.sass */
+nav form span {
+  display: block;
+  float: left;
+  width: 84%;
+  height: 3rem;
+}
+/* line 299, _base.sass */
+nav form span input {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 303, _base.sass */
+nav form button {
+  display: block;
+  float: right;
+  width: 16%;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+/* line 309, _base.sass */
+.modernizr-no-flexbox .main .search-results-viewport {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.6rem 0 0;
+  max-width: 12.75rem;
+}
+/* line 315, _base.sass */
+.modernizr-no-flexbox .main .search-results-viewport img {
+  width: 100%;
+  max-width: 12.75rem;
+}
+
+/* line 318, _base.sass */
+.main {
+  width: 100%;
+  padding: 0 0 0.72rem 0;
+  background: #c7c3c1;
+  box-shadow: 0 3px 6px rgba(128, 38, 0, 0.33) inset;
+}
+/* line 324, _base.sass */
+.main .search-results-viewport {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+}
+/* line 330, _base.sass */
+.main .search-results-viewport .search-result {
+  max-width: 12.75rem;
+  margin: 1rem auto 0;
+}
+/* line 333, _base.sass */
+.main .search-results-viewport .search-result .search-img {
+  width: 100%;
+  max-width: 12.75rem;
+  -webkit-filter: brightness(90%);
+  filter: brightness 90%;
+}
+/* line 337, _base.sass */
+.main .search-results-viewport .search-result .search-img:hover {
+  -webkit-filter: brightness(100%);
+  filter: brightness 100%;
+}
+/* line 339, _base.sass */
+.main .search-results-viewport .search-result .search-bookmark {
+  margin: 0 0 -8px;
+}
+
+/* line 342, _base.sass */
+article[id^="empty"] {
+  max-height: 0;
+  width: 100%;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+}
+/* line 346, _base.sass */
+article[id^="empty"] * {
+  max-height: 0;
+  margin: 0 auto;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 350, _base.sass */
+article[id^="empty"] p, article[id^="empty"] label, article[id^="empty"] h1 {
+  font-size: 0;
+  height: 0;
+  margin: 0 0 -2.6rem 0;
+}
+/* line 354, _base.sass */
+article[id^="empty"] ul, article[id^="empty"] li, article[id^="empty"] input, article[id^="empty"] select, article[id^="empty"] textarea, article[id^="empty"] figure section, article[id^="empty"] aside section section, article[id^="empty"] button, article[id^="empty"] .image-text-overlay {
+  display: none;
+}
+
+/* line 356, _base.sass */
+article[id^="fill"] {
+  width: 100%;
+  max-height: 100%;
+  padding: 0 0 0.72rem 0;
+  background: #b33600;
+  box-shadow: 0 3px 6px rgba(128, 38, 0, 0.33);
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+}
+/* line 363, _base.sass */
+article[id^="fill"] * {
+  max-height: 100%;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+/* line 367, _base.sass */
+.chat-messages-viewport {
+  background: #b33600;
+  overflow: hidden;
+}
+/* line 370, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport {
+  width: 100%;
+  padding: 0 0 0.72rem;
+  background: #b33600;
+  overflow: auto;
+}
+/* line 375, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .contacts-viewport-button {
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 378, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts {
+  width: 96%;
+  margin: 0 auto;
+  border-top: 0.16rem solid #b33600;
+}
+/* line 382, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact {
+  height: 3rem;
+  border-top: 0.16rem solid #b33600;
+}
+/* line 385, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact figure {
+  height: 3rem;
+}
+/* line 387, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact span {
+  height: 3rem;
+}
+/* line 389, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact img {
+  height: 3rem;
+}
+/* line 391, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact figcaption {
+  font-size: 1rem;
+}
+/* line 393, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contacts:hover .chat-contact .chat-delete-button {
+  display: block;
+}
+/* line 395, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact {
+  width: 100%;
+  height: 0;
+  border-top: none;
+  cursor: pointer;
+  background: #e75723;
+  -webkit-transition: height 0.1s ease-in-out;
+  transition: height 0.1s ease-in-out;
+  -webkit-transition: border 0.1s ease-in-out;
+  transition: border 0.1s ease-in-out;
+}
+/* line 404, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact figure {
+  width: 80%;
+  height: 0;
+  float: left;
+  margin: 0;
+}
+/* line 409, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact img {
+  display: block;
+  float: left;
+  width: auto;
+  height: 0;
+  -webkit-transition: height 0.1s ease-in-out;
+  transition: height 0.1s ease-in-out;
+}
+/* line 415, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact span {
+  display: block;
+  float: left;
+  height: 100%;
+  width: 0.6rem;
+  height: 0;
+  -webkit-transition: height 0.1s ease-in-out;
+  transition: height 0.1s ease-in-out;
+}
+/* line 422, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact figcaption {
+  line-height: 1rem;
+  font-size: 0;
+  padding: 0.48rem 0 0 4rem;
+  -webkit-transition: font-size 0.1s ease-in-out;
+  transition: font-size 0.1s ease-in-out;
+}
+/* line 427, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact .chat-delete-button {
+  display: none;
+  float: right;
+  width: 20%;
+  height: 3rem;
+  padding: 0;
+  line-height: auto;
+  font-size: auto;
+  border-left: 1px dotted #b33600;
+  cursor: pointer;
+}
+/* line 437, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact .chat-delete-button:hover {
+  background: #ff4242;
+}
+/* line 439, _base.sass */
+.chat-messages-viewport .chat-contacts-viewport .chat-contact:hover {
+  background: #ff7542;
+}
+/* line 441, _base.sass */
+.chat-messages-viewport .chat-messages, .chat-messages-viewport header, .chat-messages-viewport footer {
+  width: 96%;
+  margin: 0 auto;
+  background: #e75723;
+}
+/* line 445, _base.sass */
+.chat-messages-viewport .chat-messages {
+  padding: 0.48rem 0;
+}
+/* line 447, _base.sass */
+.chat-messages-viewport header {
+  padding: 0.72rem 0 0;
+}
+/* line 449, _base.sass */
+.chat-messages-viewport header section {
+  margin: 0 auto;
+  max-width: 23rem;
+}
+/* line 452, _base.sass */
+.chat-messages-viewport header .chat-contact {
+  margin: 0 1rem;
+}
+/* line 454, _base.sass */
+.chat-messages-viewport footer {
+  padding: 0 0 0.72rem;
+  overflow: auto;
+}
+/* line 457, _base.sass */
+.chat-messages-viewport footer section {
+  margin: 0 1rem;
+}
+/* line 459, _base.sass */
+.chat-messages-viewport footer form {
+  display: block;
+  max-width: 22rem;
+  margin: 0 auto;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.973);
+}
+/* line 465, _base.sass */
+.chat-messages-viewport footer form:hover {
+  background: white;
+}
+/* line 467, _base.sass */
+.chat-messages-viewport footer form:focus {
+  background: white;
+}
+/* line 469, _base.sass */
+.chat-messages-viewport footer form span {
+  display: block;
+  float: left;
+  width: 80%;
+  height: 3rem;
+}
+/* line 474, _base.sass */
+.chat-messages-viewport footer form span input {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 0 1rem;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: none;
+}
+/* line 484, _base.sass */
+.chat-messages-viewport footer form span input:hover, .chat-messages-viewport footer form span input:focus {
+  background: none;
+}
+/* line 486, _base.sass */
+.chat-messages-viewport footer form button {
+  display: block;
+  float: right;
+  width: 16%;
+  height: 3rem;
+  font-size: 1.2rem;
+  background: none;
+  color: #b33600;
+}
+/* line 494, _base.sass */
+.chat-messages-viewport footer form button:hover {
+  background: #ff7542;
+  color: rgba(255, 255, 255, 0.973);
+}
+/* line 497, _base.sass */
+.chat-messages-viewport .chat-messages-area {
+  height: 16rem;
+  max-height: 26rem;
+  margin: 0 1rem;
+  padding: 1.6rem 1rem;
+  background: rgba(255, 255, 255, 0.973);
+  box-shadow: 0 0 9px rgba(128, 38, 0, 0.33) inset;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* line 506, _base.sass */
+.chat-messages-viewport .chat-messages-area section {
+  margin: 0.48rem auto;
+  max-width: 20rem;
+}
+/* line 509, _base.sass */
+.chat-messages-viewport .chat-messages-area section p {
+  float: left;
+  clear: both;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
+/* line 516, _base.sass */
+.chat-messages-viewport figure {
+  width: 100%;
+  height: 3rem;
+  max-height: 4rem;
+}
+/* line 520, _base.sass */
+.chat-messages-viewport figure span {
+  display: block;
+  float: left;
+  height: 100%;
+  width: 0.6rem;
+  height: 3rem;
+}
+/* line 526, _base.sass */
+.chat-messages-viewport figure img {
+  display: block;
+  float: left;
+  width: 3rem;
+  height: auto;
+}
+/* line 531, _base.sass */
+.chat-messages-viewport figure figcaption {
+  padding: 0.48rem 1rem 0 4.6rem;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+/* line 537, _base.sass */
+.profile-and-singup-container header, .profile-and-singup-container section, .profile-and-singup-container footer {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+  background: #e75723;
+}
+/* line 542, _base.sass */
+.profile-and-singup-container section section {
+  width: 100%;
+}
+/* line 544, _base.sass */
+.profile-and-singup-container section aside {
+  margin: 1.6rem auto 0;
+  padding: 0 0 0.72rem 0;
+}
+/* line 547, _base.sass */
+.profile-and-singup-container footer, .profile-and-singup-container footer section {
+  background: #b33600;
+}
+/* line 549, _base.sass */
+.profile-and-singup-container .figure {
+  max-width: 12.75rem;
+  margin: 0 auto;
+}
+/* line 552, _base.sass */
+.profile-and-singup-container .accinfo {
+  background: #b33600;
+  margin: 0.72rem auto;
+}
+/* line 555, _base.sass */
+.profile-and-singup-container .accinfo section {
+  background: #b33600;
+}
+/* line 558, _base.sass */
+.profile-and-singup-container button {
+  width: 100%;
+  cursor: pointer;
+}
+/* line 561, _base.sass */
+.profile-and-singup-container .saveprofile-button {
+  display: block;
+  max-width: 12.75rem;
+  margin: 1.6rem auto;
+}
+/* line 566, _base.sass */
+.profile-and-singup-container .input-area, .profile-and-singup-container select {
+  margin: 0.48rem 0 0.72rem;
+  width: 100%;
+  max-width: 12.75rem;
+}
+/* line 570, _base.sass */
+.profile-and-singup-container .input-text-area {
+  width: 10.25rem;
+  min-height: 10.25rem;
+  padding: 1.2rem;
+  white-space: normal;
+  border: none;
+}
+/* line 576, _base.sass */
+.profile-and-singup-container .input-photo {
+  display: block;
+  max-width: 12.75rem;
+  position: absolute;
+  height: 12.75rem;
+  z-index: 99999;
+  opacity: 0;
+  cursor: pointer;
+}
+/* line 584, _base.sass */
+.profile-and-singup-container .figure:hover .image-text-overlay,
+.profile-and-singup-container aside .photo-section:hover .image-text-overlay {
+  opacity: 0;
+}
+/* line 587, _base.sass */
+.profile-and-singup-container .figure:hover .img-fade,
+.profile-and-singup-container aside .photo-section:hover .img-fade {
+  -webkit-filter: brightness(100%);
+  filter: brightness 100%;
+}
+/* line 590, _base.sass */
+.profile-and-singup-container .figure:focus .image-text-overlay,
+.profile-and-singup-container aside .photo-section:focus .image-text-overlay {
+  opacity: 1;
+}
+/* line 593, _base.sass */
+.profile-and-singup-container .figure:focus .img-fade,
+.profile-and-singup-container aside .photo-section:focus .img-fade {
+  -webkit-filter: brightness(100%);
+  filter: brightness 100%;
+}
+/* line 596, _base.sass */
+.profile-and-singup-container .image-text-overlay {
+  display: block;
+  position: absolute;
+  z-index: 999;
+  width: 12.4375rem;
+  padding: 20px 0 16px 5px;
+  font-size: 0.6rem;
+  background: #1a0800;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+/* line 607, _base.sass */
+.profile-and-singup-container h1 {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0.4rem;
+  line-height: 1.16;
+  font-size: 1.8rem;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 614, _base.sass */
+.profile-and-singup-container p,
+.profile-and-singup-container .input-text-area,
+.profile-and-singup-container aside {
+  font-size: 1rem;
+  position: relative;
+  z-index: 99;
+  max-width: 12.75rem;
+  margin: 0.48rem auto;
+  text-align: left;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
+/* line 624, _base.sass */
+.profile-and-singup-container .img-fade {
+  display: block;
+  font-size: 1rem;
+  position: relative;
+  z-index: 99;
+  max-width: 12.75rem;
+  margin: 0 auto;
+  text-align: left;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  -webkit-filter: brightness(85%);
+  filter: brightness 85%;
+}
+/* line 634, _base.sass */
+.profile-and-singup-container .photo-section {
+  margin: 0 auto 1rem;
+}
+
+/* line 638, _base.sass */
+.login-box {
+  max-width: 16rem;
+}
+
+/* line 640, _base.sass */
+.login-big-box {
+  max-width: 32rem;
+}
+
+/* line 642, _base.sass */
+.login-box, .login-big-box {
+  width: 90%;
+  margin: 2rem auto 0;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(128, 38, 0, 0.33);
+}
+/* line 647, _base.sass */
+.login-box img, .login-big-box img {
+  display: block;
+  width: 90%;
+  margin: 0 auto 0;
+  padding: 1rem 0 1.6rem;
+}
+/* line 652, _base.sass */
+.login-box input, .login-big-box input {
+  display: block;
+  width: 90%;
+  margin: 0 auto 0;
+}
+/* line 656, _base.sass */
+.login-box button, .login-big-box button {
+  display: block;
+  width: 90%;
+  margin: 0 auto 0;
+  cursor: pointer;
+}
+/* line 661, _base.sass */
+.login-box a, .login-big-box a {
+  display: block;
+  width: 90%;
+  margin: 0 auto 0;
+  color: #f7caba;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 667, _base.sass */
+.login-box a:hover, .login-big-box a:hover {
+  color: white;
+}
+/* line 669, _base.sass */
+.login-box h1, .login-big-box h1 {
+  margin: 0 auto 1rem;
+  padding: 1rem 0 0;
+  line-height: 1;
+}
+/* line 673, _base.sass */
+.login-box p, .login-big-box p {
+  width: 88%;
+  max-width: 90%;
+  margin: 0 5% 1rem;
+}
+/* line 677, _base.sass */
+.login-box .input-text-area-login, .login-big-box .input-text-area-login {
+  width: 88%;
+  min-height: 5rem;
+  max-width: 90%;
+  margin: 0 5%;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.973);
+  border: none;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+}
+/* line 687, _base.sass */
+.login-box .input-text-area-login:hover, .login-box .input-text-area-login:focus, .login-big-box .input-text-area-login:hover, .login-big-box .input-text-area-login:focus {
+  background: white;
+}
+/* line 690, _base.sass */
+.login-box .topic, .login-big-box .topic {
+  margin: 1.6rem 0;
+  text-align: left;
+}
+/* line 693, _base.sass */
+.login-box .question, .login-big-box .question {
+  margin: 0 5%;
+  color: white;
+}
+/* line 696, _base.sass */
+.login-box .answer, .login-big-box .answer {
+  color: #f7caba;
+}
+/* line 698, _base.sass */
+.login-box .loginform, .login-big-box .loginform {
+  padding: 0 0 1.6rem 0;
+}
+/* line 700, _base.sass */
+.login-box .other-links, .login-big-box .other-links {
+  padding: 1.6rem 0 0;
+}
+
+/* line 705, _base.sass */
+.pagefooter {
+  padding: 1rem 0 0;
+  text-align: center;
+  line-height: 1.6rem;
+  font-size: 0.6rem;
+  font-weight: 400;
+  box-shadow: 0 3px 6px rgba(128, 38, 0, 0.33) inset;
+}
+/* line 712, _base.sass */
+.pagefooter a {
+  text-decoration: underline;
+}
+
+/* line 714, _base.sass */
+.floating-alert {
+  position: fixed;
+  z-index: 99999999;
+  top: 27%;
+  width: 100%;
+  height: 0;
+}
+/* line 720, _base.sass */
+.floating-alert section {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 6rem;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 4rem;
+  background: #e75723;
+  border: 1rem solid #b33600;
+  border-radius: 0.48rem;
+  box-shadow: 0 3px 24px #802600;
+}
+
+/* line 736, _base.sass */
+.ajax-loading section {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 6rem;
+}
+/* line 742, _base.sass */
+.ajax-loading span {
+  display: block;
+  position: absolute;
+  width: 6rem;
+  line-height: 0;
+  padding: 0.2rem 0 0;
+  color: #b33600;
+  -webkit-animation: make-it-rotate 2s infinite linear;
+  animation: make-it-rotate 2s infinite linear;
+}
+
+/* line 751, _base.sass */
+.modernizr-no-flexbox .floating-alert section {
+  position: relative;
+  display: table;
+}
+/* line 754, _base.sass */
+.modernizr-no-flexbox .floating-alert span {
+  display: table-cell;
+  vertical-align: bottom;
+  height: 3rem;
+  padding: 0;
+  margin: 3rem 0 0;
+  transform-origin: top;
+}
+
+/* line 761, _base.sass */
+.alerts-on {
+  display: block;
+  width: 100%;
+  padding: 1.6rem 0;
+  text-align: center;
+  background: #ff4242;
+  box-shadow: 0 3px 6px rgba(128, 38, 0, 0.33);
+}
+/* line 769, _base.sass */
+.alerts-on p {
+  margin: 0 0.6rem;
+}
+
+/* line 771, _base.sass */
+.alerts-off {
+  display: none;
+}
+
+/* line 773, _base.sass */
+.flicking {
+  -webkit-animation: flicking 0.6s infinite linear;
+  animation: flicking 0.6s infinite linear;
+}
+
+/* line 776, _base.sass */
+.new-message-poupup-container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  color: #b33600;
+  z-index: 99999999;
+}
+
+/* line 785, _base.sass */
+.new-message-poupup {
+  display: block;
+  width: 10.25rem;
+  height: 3rem;
+  padding: 0 0 0.4rem;
+  margin: 0 auto 0.48rem;
+  background: #e75723;
+  border: 0.67rem solid #b33600;
+  border-radius: 0.48rem;
+  box-shadow: 0 3px 24px #802600;
+  cursor: pointer;
+  -webkit-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out;
+  -webkit-transition: margin 0.15s ease-out;
+  transition: margin 0.15s ease-out;
+}
+/* line 798, _base.sass */
+.new-message-poupup:hover {
+  background: #ff7542;
+}
+
+/* line 800, _base.sass */
+.down {
+  margin-bottom: -120%;
+}
+
+@media only screen and (min-width: 480px) {
+  /* line 1, _480up.sass */
+  .new-message-poupup-container {
+    position: fixed;
+    width: 10rem;
+    bottom: 0.6rem;
+    left: 1rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  /* line 2, _700up.sass */
+  article[id^="fill"] {
+    width: 80%;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0 0 0.72rem 0;
+  }
+
+  /* line 9, _700up.sass */
+  nav {
+    margin: 0;
+    overflow: auto;
+  }
+  /* line 12, _700up.sass */
+  nav header {
+    position: absolute;
+    margin: 0 0 0 5rem;
+    height: 3rem;
+  }
+  /* line 16, _700up.sass */
+  nav header a img {
+    height: 3rem;
+  }
+  /* line 19, _700up.sass */
+  nav section button {
+    position: absolute;
+    width: 3rem;
+    margin: 0 0 0 0.72rem;
+  }
+  /* line 24, _700up.sass */
+  nav section:hover .menu-list {
+    position: absolute;
+    left: -0.72rem;
+    top: 3.3rem;
+    z-index: 9999999999;
+    max-width: 12.75rem;
+    margin: 0.48rem 0.72rem;
+  }
+  /* line 31, _700up.sass */
+  nav section:hover .menu-list li {
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* line 34, _700up.sass */
+  nav form {
+    float: right;
+    width: 63%;
+    height: 3rem;
+    margin: 0 0.72rem 0 0;
+  }
+  /* line 39, _700up.sass */
+  nav form span {
+    float: right;
+  }
+  /* line 41, _700up.sass */
+  nav form span input {
+    float: right;
+    margin: 0 4.44rem;
+  }
+  /* line 44, _700up.sass */
+  nav form button {
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    margin: 0 0.72rem;
+  }
+
+  /* line 50, _700up.sass */
+  .modernizr-no-flexbox .main .search-results-viewport {
+    display: block;
+    width: 81%;
+    max-width: 46rem;
+    overflow: auto;
+    padding: 2.6rem 0 0.72rem 0;
+  }
+  /* line 56, _700up.sass */
+  .modernizr-no-flexbox .main .search-results-viewport .search-result {
+    float: left;
+    max-width: 10.25rem;
+    margin: 0.4rem 0.6rem;
+  }
+  /* line 60, _700up.sass */
+  .modernizr-no-flexbox .main .search-results-viewport .search-bookmark {
+    margin: 0 0 -0.5rem;
+  }
+  /* line 62, _700up.sass */
+  .modernizr-no-flexbox .main .search-results-viewport img {
+    width: 100%;
+    max-width: 10.25rem;
+  }
+
+  /* line 67, _700up.sass */
+  .main .search-results-viewport {
+    display: block;
+    width: 81%;
+    max-width: 46rem;
+    overflow: auto;
+    padding: 2.6rem 0 0.72rem 0;
+  }
+  /* line 73, _700up.sass */
+  .main .search-results-viewport .search-result {
+    float: left;
+    max-width: 10.25rem;
+    margin: 0.4rem 0.6rem;
+  }
+  /* line 77, _700up.sass */
+  .main .search-results-viewport .search-bookmark {
+    margin: 0.4rem 0.6rem;
+  }
+
+  /* line 81, _700up.sass */
+  .modernizr-no-flexbox .profile-and-singup-container .float-fig {
+    clear: both;
+  }
+  /* line 83, _700up.sass */
+  .modernizr-no-flexbox .profile-and-singup-container .userprofile-gallery {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0 1.6rem 1.6rem;
+    margin: 0 auto;
+    clear: left;
+  }
+  /* line 90, _700up.sass */
+  .modernizr-no-flexbox .profile-and-singup-container .userprofile-gallery .photo-section {
+    width: 31%;
+    max-width: 12.4375rem;
+    margin: 0 1%;
+    float: left;
+  }
+  /* line 95, _700up.sass */
+  .modernizr-no-flexbox .profile-and-singup-container .userprofile-gallery .photo-section:first-child {
+    margin: 0 1% 0 0;
+  }
+  /* line 97, _700up.sass */
+  .modernizr-no-flexbox .profile-and-singup-container .userprofile-gallery .photo-section:last-child {
+    margin: 0 0 0 1%;
+  }
+
+  /* line 102, _700up.sass */
+  .profile-and-singup-container section .profile-gallery {
+    width: 90%;
+    max-width: 38.25rem;
+    padding: 0 1.6rem 1.6rem 0;
+    margin: auto 1.6rem auto 1.6rem;
+    overflow: auto;
+  }
+  /* line 108, _700up.sass */
+  .profile-and-singup-container section .profile-gallery .img-fade {
+    float: left;
+    max-width: 30%;
+    margin: 0 1%;
+  }
+  /* line 112, _700up.sass */
+  .profile-and-singup-container .signup-form {
+    padding: 0 0 0 -1.6rem;
+    overflow: hidden;
+  }
+  /* line 115, _700up.sass */
+  .profile-and-singup-container .signup-form section {
+    margin: 0 0 0 1.6rem;
+  }
+  /* line 117, _700up.sass */
+  .profile-and-singup-container .photo-section {
+    margin: 0 auto;
+  }
+  /* line 119, _700up.sass */
+  .profile-and-singup-container header, .profile-and-singup-container section, .profile-and-singup-container footer {
+    text-align: left;
+    margin: 0 auto;
+  }
+  /* line 122, _700up.sass */
+  .profile-and-singup-container footer {
+    overflow: auto;
+  }
+  /* line 124, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0 1.6rem 1.6rem;
+    margin: auto 0;
+    overflow: hidden;
+  }
+  /* line 130, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .photo-section {
+    width: 31%;
+    max-width: 12.4375rem;
+    margin: 0 1%;
+    float: left;
+  }
+  /* line 135, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .photo-section:first-child {
+    margin: 0 1% 0 0;
+  }
+  /* line 137, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .photo-section:last-child {
+    margin: 0 0 0 1%;
+  }
+  /* line 139, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery button {
+    width: 109%;
+    max-width: 12.75rem;
+  }
+  /* line 142, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .image-text-overlay {
+    width: 100%;
+    max-width: 12.4375rem;
+    margin: 0;
+  }
+  /* line 146, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .image-text-overlay .image-text-overlay {
+    width: 98%;
+    margin: 0 5px 0 -5px;
+  }
+  /* line 149, _700up.sass */
+  .profile-and-singup-container .userprofile-gallery .image-text-overlay .img-fade {
+    width: 100%;
+    max-width: 12.4375rem;
+    position: relative;
+    z-index: 99;
+  }
+  /* line 154, _700up.sass */
+  .profile-and-singup-container .figure {
+    float: left;
+    margin: 0.72rem;
+    padding: 0.72rem;
+  }
+  /* line 158, _700up.sass */
+  .profile-and-singup-container .accinfo {
+    background: #b33600;
+    margin: 0.72rem auto;
+  }
+  /* line 161, _700up.sass */
+  .profile-and-singup-container .accinfo section {
+    background: #b33600;
+  }
+  /* line 164, _700up.sass */
+  .profile-and-singup-container button {
+    max-width: 12.4375rem;
+    cursor: pointer;
+  }
+  /* line 167, _700up.sass */
+  .profile-and-singup-container .saveprofile-button {
+    display: block;
+    max-width: 12.75rem;
+    margin: 1.6rem auto;
+  }
+  /* line 172, _700up.sass */
+  .profile-and-singup-container .figure:hover .image-text-overlay,
+  .profile-and-singup-container aside .photo-section:hover .image-text-overlay {
+    opacity: 0;
+  }
+  /* line 175, _700up.sass */
+  .profile-and-singup-container .figure:hover .img-fade,
+  .profile-and-singup-container aside .photo-section:hover .img-fade {
+    -webkit-filter: brightness(100%);
+    filter: brightness 100%;
+  }
+  /* line 178, _700up.sass */
+  .profile-and-singup-container .figure:focus .image-text-overlay,
+  .profile-and-singup-container aside .photo-section:focus .image-text-overlay {
+    opacity: 1;
+  }
+  /* line 181, _700up.sass */
+  .profile-and-singup-container .figure:focus .img-fade,
+  .profile-and-singup-container aside .photo-section:focus .img-fade {
+    -webkit-filter: brightness(100%);
+    filter: brightness 100%;
+  }
+  /* line 185, _700up.sass */
+  .profile-and-singup-container h1 {
+    max-width: 100%;
+    margin: 0;
+  }
+  /* line 188, _700up.sass */
+  .profile-and-singup-container p {
+    float: left;
+    width: 50%;
+    max-width: 38.25rem;
+    padding: 1rem 2rem;
+  }
+  /* line 193, _700up.sass */
+  .profile-and-singup-container .input-text-area {
+    float: left;
+    width: 100%;
+    max-width: 38.25rem;
+    padding: 1rem 2rem;
+  }
+  /* line 198, _700up.sass */
+  .profile-and-singup-container .menu-list {
+    width: 100%;
+    float: left;
+    max-height: 20rem;
+  }
+  /* line 202, _700up.sass */
+  .profile-and-singup-container .menu-list li {
+    width: 32%;
+    float: left;
+    margin: 0 1%;
+  }
+  /* line 206, _700up.sass */
+  .profile-and-singup-container .menu-list li:first-child {
+    margin: 0 1% 0 0;
+  }
+  /* line 208, _700up.sass */
+  .profile-and-singup-container .menu-list li:last-child {
+    margin: 0 0 0 1%;
+  }
+
+  /* line 210, _700up.sass */
+  .login-box {
+    margin: 10% auto 0;
+  }
+
+  /* line 212, _700up.sass */
+  .pagefooter {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* line 2, _1200up.sass */
+  article[id^="fill"] {
+    width: 67%;
+  }
+
+  /* line 7, _1200up.sass */
+  .main .search-results-viewport {
+    display: block;
+    width: 81%;
+    max-width: 81rem;
+    overflow: auto;
+    padding: 2.6rem 0 0.72rem 0;
+  }
+  /* line 13, _1200up.sass */
+  .main .search-results-viewport .search-result {
+    float: left;
+    max-width: 10.25rem;
+    margin: 0.4rem 0.6rem;
+  }
+}

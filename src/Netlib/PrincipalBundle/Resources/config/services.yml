@@ -1,0 +1,7 @@
+parameters:
+#    netlib_index.example.class: Netlib\IndexBundle\Example
+
+services:
+#    netlib_index.example:
+#        class: %netlib_index.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

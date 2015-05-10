@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>NetLib</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% stylesheets 'css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css">
+        {% endstylesheets %}
+        {% javascripts 'js/jquery.min.js' 'js/jquery-ui.min.js' 'js/analytics.js' %}
+        <script type="text/javascript" src="{{ asset_url }}" /></script>
+        {% endjavascripts %}
+    <style>
+        #contato_comentario{height: 200px; width: 500px; text-align: center;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            {% if erro %}
+            $(function() {
+                $("<div>Código para ativação incorreto ou cadastro já foi ativado, entre em contato conosco!</div>").dialog({
+                    autoOpen: true,
+                    title: 'Mensagem',
+                    buttons: {
+                        "OK": function() {
+                            $(this).dialog("close");
+                            location.href = "{{path('netlib_index')}}";
+                        }
+                    },
+                    height: "auto",
+                    width: "auto"
+                });
+            });
+            {% endif %}
+
+            {% if erro == false %}
+            $(function() {
+                $("<div>Cadastro ativado com sucesso!</div>").dialog({
+                    autoOpen: true,
+                    title: 'Mensagem',
+                    buttons: {
+                        "OK": function() {
+                            $(this).dialog("close");
+                            location.href = "{{path('netlib_index')}}";
+                        }
+                    },
+                    height: "auto",
+                    width: "auto"
+                });
+            });
+            {% endif %}
+        });
+    </script>    
+</head>
+<body class="orangenormal">
+</body>
+</html>

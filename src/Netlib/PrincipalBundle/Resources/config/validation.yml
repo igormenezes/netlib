@@ -1,0 +1,259 @@
+Netlib\PrincipalBundle\Form\IndexForm:
+  properties:
+    login:
+      - NotBlank:
+          message: Preencha o login/e-mail!
+          groups: [padrao]
+      - Email: 
+          message: O login/e-mail digitado é inválido
+          checkMX: true 
+          groups: [padrao]
+    senha:
+      - NotBlank:
+          message: Preencha a senha!
+          groups: [padrao]
+      - Length:
+          min: 6
+          minMessage: A senha tem que ter pelo menos 6 caracteres
+          groups: [padrao]
+Netlib\PrincipalBundle\Form\CadastroForm:
+  properties: 
+    nome:
+      - NotBlank:
+          message: Preencha o nome!
+          groups: [cadastro]
+      - Length:
+          min: 3
+          minMessage: "O nome tem que ter pelo menos 3 caracteres"
+          groups: [cadastro]
+      - Regex:
+           pattern: "/^([a-zA-ZÁ-Úá-úÀ-Ùà-ù ]){3,}$/"
+           message: "Caracteres para o nome são inválidos, tem que possuir pelo menos 3 caracteres, e só pode conter letras!"
+           groups: [cadastro]
+    apelido:
+      - NotBlank: 
+          message: Preencha o apelido!
+          groups: [cadastro]
+      - Length:
+          min: 2
+          minMessage: "O apelido tem que ter pelo menos 2 caracteres"
+          groups: [cadastro]
+      - Regex:
+           pattern: "/^([a-zA-Z]){2,}$/"
+           message: "Caracteres para o apelido são inválidos, tem que possuir pelo menos 2 caracteres, e só pode conter letras!"
+           groups: [cadastro]
+    perfil:
+      - NotBlank: 
+          message: Selecione uma foto para o perfil!
+          groups: [cadastro]
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(perfil) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [cadastro]
+    interesses:
+      - NotBlank:
+          message: Preencha o campo interesse!
+          groups: [cadastro]
+      - Length:
+          min: 4
+          max: 800
+          minMessage: "Seu interesse tem que ter no minímo 4 caracteres"
+          maxMessage: "Seu interesse tem que ter no maximo 800 caracteres"    
+    foto1:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 1 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [cadastro]
+    foto2:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 2 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [cadastro]
+    foto3:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 3 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [cadastro]
+    sexo:
+      - NotBlank:
+          message: Selecione o sexo!
+          groups: [cadastro]
+    filtro:
+      - NotBlank:
+          message: filtro inválido!
+          groups: [cadastro]
+    email:
+      - NotBlank:
+          message: Preencha o login/e-mail!
+          groups: [cadastro]
+      - Email: 
+          message: O login/e-mail digitado é inválido
+          checkMX: true 
+          groups: [cadastro]
+    senha:
+      - NotBlank:
+          message: Preencha a senha!
+          groups: [cadastro]
+      - Length:
+          min: 6
+          minMessage: "A senha tem que ter pelo menos 6 caracteres"
+          groups: [cadastro]
+Netlib\PrincipalBundle\Form\PerfilForm:
+  properties:
+    perfil:  
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(perfil) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [perfil]
+    interesses:
+      - NotBlank:
+          message: Preencha o campo interesse!
+          groups: [perfil]
+      - Length:
+          min: 4
+          max: 800
+          minMessage: "Seu interesse tem que ter no minímo 4 caracteres"
+          maxMessage: "Seu interesse tem que ter no maximo 800 caracteres"
+          groups: [perfil]
+    foto1:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 1 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [perfil]
+    foto2:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 2 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [perfil]
+    foto3:
+      - Image:
+          mimeTypes: image/jpeg
+          mimeTypesMessage: Formato da imagem(foto 3 do álbum) deve ser .JPG
+          minWidth: 200  
+          minHeight: 200
+          minWidthMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          minHeightMessage: O tamanho minimo para a imagem, deve ser 200 X 200
+          groups: [perfil] 
+    filtro:
+      - NotBlank:
+          message: filtro inválido!
+          groups: [perfil]
+    senha:
+      - Length:
+          min: 6
+          minMessage: "A senha tem que ter pelo menos 6 caracteres"
+          groups: [perfil]   
+Netlib\PrincipalBundle\Form\BuscaForm:
+  properties:
+    busca:
+      - NotBlank:
+          message: Preencha o campo interesse!
+          groups: [busca]
+      - Length:
+          min: 3
+          max: 800
+          minMessage: "Sua busca tem que ter no minímo 3 caracteres"
+          maxMessage: "Sua busca tem que ter no maximo 800 caracteres"
+          groups: [busca]
+Netlib\PrincipalBundle\Form\MensagemForm:
+  properties:
+    mensagem:
+      - NotBlank:
+          message: Preencha o campo mensagem!
+          groups: [mensagem]  
+      - Length:
+          max: 200
+          maxMessage: "Você ultrapassou o limite de caracteres"
+          groups: [mensagem] 
+Netlib\PrincipalBundle\Form\ContatoForm:
+    properties:
+     nome:
+      - NotBlank:
+          message: Preencha o campo nome!
+          groups: [contato]
+     email:
+      - NotBlank:
+          message: Preencha o campo e-mail!
+          groups: [contato]
+      - Email: 
+          message: E-mail digitado é inválido
+          checkMX: true 
+          groups: [contato]    
+     comentario:
+      - NotBlank:
+          message: Preencha o campo de comentário!
+          groups: [contato]       
+Netlib\PrincipalBundle\Form\DenunciarForm:
+    properties:
+     seuapelido:
+      - NotBlank:
+          message: Preencha o campo Seu apelido!
+          groups: [denunciar]
+     email:
+      - NotBlank:
+          message: Preencha o campo e-mail!
+          groups: [contato]
+      - Email: 
+          message: E-mail digitado é inválido
+          checkMX: true 
+          groups: [contato]          
+     apelidodenuncia:
+      - NotBlank:
+          message: Preencha o campo apelido do usuário denunciado!
+          groups: [denunciar]   
+     motivo:
+      - NotBlank:
+          message: Preencha o campo de comentário!
+          groups: [denunciar] 
+Netlib\PrincipalBundle\Form\EsquecisenhaForm:
+    properties:
+     login:
+      - NotBlank:
+          message: Preencha o campo e-mail!
+          groups: [esquecisenha]
+      - Email: 
+          message: E-mail digitado é inválido
+          checkMX: true 
+          groups: [esquecisenha]    
+Netlib\PrincipalBundle\Form\NovasenhaForm:
+    properties:
+     codigo:
+      - NotBlank:
+          message: Preencha o campo do código de ativação!
+          groups: [novasenha]
+     senha:
+      - NotBlank:
+          message: Preencha a senha!
+          groups: [novasenha]
+      - Length:
+          min: 6
+          minMessage: "A senha tem que ter pelo menos 6 caracteres"
+          groups: [novasenha]            
