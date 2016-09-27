@@ -1,4 +1,5 @@
-# Netlib
-Projeto realizado em 2013
+# Netlib - Dezembro 2013
 
-Rede social com o foco em compartilhar interesses em comum
+Rede social com o foco em encontrar pessoas que compartilham os mesmos interesses. 
+
+Desenvolvido com PHP no framework Symfony.
